@@ -1,0 +1,15 @@
+#! /bin/sh
+
+chosen=$(printf " Record(Pulse, 120 FPS)\n ¹ Record(Pulse)\n ² Record(ALSA)\n ³ Record(Pipewire)\n  Enable webcam\n Pause\n Resume\n Stop recording" | rofi -dmenu -i -theme-str '@import "dmenu.rasi"')
+
+case "$chosen" in
+        " Record(Pulse, 120 FPS)") ffmpeg -framerate 120 -f pulse -f x11grab -i :0.0 out.mkv ;;
+        " ¹ Record(Pulse)") ffmpeg -f pulse -f x11grab -i :0.0 out.mkv ;;
+        " ² Record(ALSA)") ffmpeg -framerate 120 -f alsa -f x11grab -i :0.0 out.mkv ;;
+        " ³ Record(Pipewire)") ffmpeg -framerate 120 -f pipewire -f x11grab -i :0.0 out.mkv ;;
+        "  Enable webcam") mpv /dev/video0 ;;
+	" Pause") killall -s STOP ffmpeg ;;
+	" Resume") killall -s CONT ffmpeg ;;
+        " Stop recording") killall ffmpeg ;;
+        *) exit 1 ;;
+esac
