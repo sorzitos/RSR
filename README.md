@@ -4,6 +4,7 @@ This is a simple bash script to record your screen using FFmpeg and rofi interfa
 ## Requirements
 - ffmpeg
 - rofi
+- nerd font for the icons
 
 ## Usage
 Select the desired recording type, and then enter the video will be saved in the current directory.
