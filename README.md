@@ -14,7 +14,7 @@ https://user-images.githubusercontent.com/108033555/218224413-be71044a-6f61-495d
 To install the script, simply open a terminal and execute the following command:
 
 ```
-sudo curl -sL github.com/sorzitos/RSR/src/branch/main/rsr -o /usr/local/bin/rsr && sudo chmod +x /usr/local/bin/rsr
+sudo curl -sL https://github.com/sorzitos/RSR/raw/main/rsr -o /usr/local/bin/rsr && sudo chmod +x /usr/local/bin/rsr
 ```
 
 ## Note
